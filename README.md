@@ -22,7 +22,7 @@ Para configurar dados de acesso, execute: `aws configure --profile default`
 
 Listando as mensagens da fila:
 
-`aws --endpoint-url=http://localhost:4576 sqs receive-message --queue-url "http://localhost:4576/000000000000/minha-fila"`
+`aws --endpoint-url=http://localhost:4576 sqs receive-message --queue-url "http://localhost:4576/000000000000/minha-fila" --max-number-of-messages 2`
 
 ## Inscreva a fila no tópico
 `aws --endpoint-url=http://localhost:4575 sns subscribe --topic-arn "arn:aws:sns:us-east-1:000000000000:meu-topico" --protocol sqs --notification-endpoint "http://localhost:4576/000000000000/minha-fila"`
